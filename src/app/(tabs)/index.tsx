@@ -1,8 +1,10 @@
-import { Alert, Image, Pressable, StyleSheet, Text, View } from "react-native";
+import CounterButton from "@/components/CounterButton";
+import { Alert, Image, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+
 
 export default function Index() {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container} contentContainerStyle={{alignItems: "center"}}>
 
      <View style={styles.header}>
        <Image
@@ -11,6 +13,7 @@ export default function Index() {
         resizeMode="cover"
       /> 
       </View>
+
 
     <View style={styles.content}>
       <Image
@@ -27,8 +30,17 @@ export default function Index() {
       >
         <Text style={styles.buttonText}>click here</Text>
       </Pressable>
-    </View>
+
+
+      <View style={styles.counterContainer}>
+        <CounterButton title="Click me!" step={1} initialValue={0} />
+        <CounterButton title="Click me!" step={2} initialValue={0} />
+        <CounterButton title="Click me!" step={3} initialValue={0} />
+        <CounterButton title="Click me!" step={4} initialValue={0} />
+      </View>
   </View>
+
+  </ScrollView>
   );
 }
 
@@ -76,5 +88,10 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 16,
     fontWeight: "bold",
+  },
+  counterContainer: {
+    width: "100%",
+    alignItems: "center",
+    gap: 10,
   },
 });
