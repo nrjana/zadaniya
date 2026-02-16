@@ -1,8 +1,14 @@
-import { Alert, Pressable, StyleSheet, Text, View } from "react-native";
+import { Alert, Image, Pressable, StyleSheet, Text, View } from "react-native";
 
 export default function Index() {
   return (
     <View style={styles.container}>
+
+      <Image
+        source={require("../../assets/images/bts.jpg")}
+        style={styles.image}
+      />
+
       <Text style={styles.title}>Имя студента: Min Yoongi</Text>
       <Text style={styles.subtitle}>Название курса: K-pop rap lessons</Text>
 
@@ -22,6 +28,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#f5f5f5",
+  },
+  image: {
+    width: 150,
+    height: 150,
+    borderRadius: 75,
+    marginBottom: 20,
   },
   title: {
     fontSize: 24,
