@@ -4,9 +4,18 @@ export default function Index() {
   return (
     <View style={styles.container}>
 
+     <View style={styles.header}>
+       <Image
+        source={require("../../assets/images/header.jpg")}
+        style={styles.headerImage}
+        resizeMode="cover"
+      /> 
+      </View>
+
+    <View style={styles.content}>
       <Image
         source={require("../../assets/images/bts.jpg")}
-        style={styles.image}
+        style={styles.avatar}
       />
 
       <Text style={styles.title}>Имя студента: Min Yoongi</Text>
@@ -19,17 +28,30 @@ export default function Index() {
         <Text style={styles.buttonText}>click here</Text>
       </Pressable>
     </View>
+  </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
     backgroundColor: "#f5f5f5",
   },
-  image: {
+  header: {
+    height: 200,
+    width: "100%",
+  },
+  headerImage: {
+    width: "100%",
+    height: "100%",
+  },
+  content: {
+    flex: 1,  
+    justifyContent: "center",
+    alignItems: "center",
+    paddingHorizontal: 20,
+  },
+  avatar: {
     width: 150,
     height: 150,
     borderRadius: 75,
